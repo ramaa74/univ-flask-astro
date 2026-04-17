@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#111827" />
+      <stop offset="60%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </radialGradient>
+    <linearGradient id="river" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a5b4fc" stop-opacity="0.7" />
+      <stop offset="50%" stop-color="#6366f1" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)" />
+  <g fill="#f8fafc" opacity="0.85">
+    <circle cx="220" cy="140" r="3" />
+    <circle cx="370" cy="70" r="4" />
+    <circle cx="550" cy="120" r="2.5" />
+    <circle cx="770" cy="90" r="3.5" />
+    <circle cx="980" cy="180" r="4" />
+    <circle cx="860" cy="300" r="2" />
+    <circle cx="500" cy="260" r="2.7" />
+    <circle cx="310" cy="320" r="3.2" />
+    <circle cx="950" cy="70" r="2" />
+    <circle cx="650" cy="210" r="3.5" />
+  </g>
+  <path d="M0 560 C250 420 500 740 900 520 C1020 440 1180 520 1200 490 L1200 900 L0 900 Z" fill="url(#river)" />
+  <path d="M0 480 C220 320 520 640 940 420 C1050 340 1180 420 1200 390 L1200 500 L0 500 Z" fill="rgba(209, 250, 229, 0.08)" />
+  <circle cx="900" cy="320" r="95" fill="rgba(255,255,255,0.08)" />
+  <circle cx="908" cy="316" r="42" fill="rgba(255,255,255,0.14)" />
+  <path d="M760 260 Q780 220 820 240 Q840 260 880 250" fill="none" stroke="#e0e7ff" stroke-width="4" stroke-linecap="round" opacity="0.7" />
+  <path d="M680 200 Q720 160 760 190" fill="none" stroke="#c7d2fe" stroke-width="5" stroke-linecap="round" opacity="0.55" />
+  <g fill="#f8fafc" opacity="0.9">
+    <circle cx="716" cy="196" r="6" />
+    <circle cx="854" cy="236" r="4" />
+    <circle cx="780" cy="148" r="3" />
+  </g>
+  <text x="50%" y="90%" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="55" text-anchor="middle">Voie Lactée</text>
+</svg>

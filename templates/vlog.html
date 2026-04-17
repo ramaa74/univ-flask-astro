@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Vlog{% endblock %}
+
+{% block page_content %}
+<div class="page-card p-4 mb-4">
+  <div class="page-title">Vlog Astronomie</div>
+  <p class="text-small">Un espace pour partager des vidéos, des découvertes et des conseils autour de l’astronomie.</p>
+</div>
+
+<div class="row">
+  {% for vlog in vlogs %}
+    <div class="col-md-4 mb-4">
+      <div class="card vlog-card h-100">
+        <div class="vlog-card-thumb">▶</div>
+        <div class="vlog-card-body">
+          <h5>{{ vlog.title }}</h5>
+          <p class="text-small">{{ vlog.description }}</p>
+          <a class="btn btn-primary mb-3" href="{{ vlog.link }}">Voir le vlog</a>
+
+          <div class="vlog-comments mb-3">
+            <div class="vlog-comments-title">Commentaires</div>
+            {% set comments = comments_by_title.get(vlog.title, []) %}
+            {% if comments %}
+              {% for comment in comments %}
+                <div class="vlog-comment">
+                  <strong>{{ comment.username }}</strong>
+                  <span class="text-small text-muted">{{ comment.created_at.strftime('%d/%m %H:%M') }}</span>
+                  <p>{{ comment.content }}</p>
+                </div>
+              {% endfor %}
+            {% else %}
+              <div class="vlog-comment text-muted">Aucun commentaire pour le moment.</div>
+            {% endif %}
+          </div>
+
+          <form method="POST">
+            <input type="hidden" name="vlog_title" value="{{ vlog.title }}">
+            <div class="form-group">
+              <textarea class="form-control" name="comment" rows="3" placeholder="Écrire un commentaire..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-secondary btn-block">Envoyer</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

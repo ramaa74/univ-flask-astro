@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Appareils Photo{% endblock %}
+
+{% block page_content %}
+<div class="page-card p-4 mb-4">
+  <div class="page-title">Appareils Photo</div>
+  <p class="text-small">Une sélection d’appareils photo classés par catégories pour les débutants et les passionnés d’astronomie.</p>
+</div>
+
+{% set categories = ['Amateur', 'Amateur sérieux', 'Professionnel'] %}
+
+{% for category in categories %}
+<div class="page-section">
+  <h2 class="section-title">{{ category }}</h2>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Marque</th>
+          <th>Modèle</th>
+          <th>Date de sortie</th>
+          <th>Note</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% set found = false %}
+        {% for camera in cameras %}
+          {% if camera.category == category %}
+            {% set found = true %}
+            <tr>
+              <td>{{ camera.brand }}</td>
+              <td>{{ camera.model }}</td>
+              <td>{{ camera.release_date }}</td>
+              <td>{{ camera.score }}/5</td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+        {% if not found %}
+          <tr>
+            <td colspan="4" class="text-muted">Aucun appareil trouvé pour cette catégorie.</td>
+          </tr>
+        {% endif %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

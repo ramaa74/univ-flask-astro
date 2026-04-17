@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Téléscopes{% endblock %}
+
+{% block page_content %}
+<div class="page-card p-4 mb-4">
+  <div class="page-title">Téléscopes</div>
+  <p class="text-small">Découvrez des modèles adaptés aux enfants, aux observations automatisées et aux configurations complètes.</p>
+</div>
+
+{% set categories = ['Pour enfants', 'Automatisés', 'Complets'] %}
+
+{% for category in categories %}
+<div class="page-section">
+  <h2 class="section-title">{{ category }}</h2>
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Marque</th>
+          <th>Modèle</th>
+          <th>Date de sortie</th>
+          <th>Note</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% set found = false %}
+        {% for telescope in telescopes %}
+          {% if telescope.category == category %}
+            {% set found = true %}
+            <tr>
+              <td>{{ telescope.brand }}</td>
+              <td>{{ telescope.model }}</td>
+              <td>{{ telescope.release_date }}</td>
+              <td>{{ telescope.score }}/5</td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+        {% if not found %}
+          <tr>
+            <td colspan="4" class="text-muted">Aucun télescope trouvé pour cette catégorie.</td>
+          </tr>
+        {% endif %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

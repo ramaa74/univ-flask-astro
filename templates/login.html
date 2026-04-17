@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block page_content %}
+<div class="auth-page d-flex justify-content-center align-items-center">
+  <div class="auth-card">
+    <h1>Connexion</h1>
+    <p class="text-small mb-4">Entrez vos identifiants pour accéder à la liste des appareils et photos.</p>
+
+    <form method="POST">
+    <div class="form-group">
+      <label for="username">Nom d’utilisateur</label>
+      <input type="text" class="form-control" id="username" name="username" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <input type="password" class="form-control" id="password" name="password" required>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
+  </form>
+
+  <p class="mt-4 mb-0">Pas encore de compte ? <a href="{{ url_for('register') }}">Inscrivez-vous</a></p>
+  </div>
+</div>
+{% endblock %}

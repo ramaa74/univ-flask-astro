@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+    <radialGradient id="galaxy" cx="40%" cy="40%" r="35%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="30%" stop-color="#93c5fd" />
+      <stop offset="60%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg3)" />
+  <g fill="#f8fafc" opacity="0.9">
+    <circle cx="140" cy="120" r="3" />
+    <circle cx="280" cy="90" r="2.5" />
+    <circle cx="680" cy="150" r="2" />
+    <circle cx="1020" cy="210" r="3" />
+    <circle cx="840" cy="110" r="4" />
+  </g>
+  <ellipse cx="580" cy="360" rx="310" ry="140" fill="url(#galaxy)" opacity="0.92" />
+  <path d="M270 420 C420 260 620 520 780 320 C860 240 970 360 1060 310" fill="none" stroke="#e0e7ff" stroke-width="14" opacity="0.22" />
+  <path d="M330 500 C480 340 690 560 850 380 C930 300 1030 420 1110 370" fill="none" stroke="#c7d2fe" stroke-width="10" opacity="0.18" />
+  <g fill="#e2e8f0" opacity="0.8">
+    <circle cx="560" cy="340" r="7" />
+    <circle cx="640" cy="320" r="4" />
+    <circle cx="720" cy="360" r="3" />
+    <circle cx="480" cy="380" r="3.5" />
+  </g>
+  <text x="50%" y="90%" fill="#cbd5e1" font-family="Arial, sans-serif" font-size="48" text-anchor="middle">Galaxie d'Andromède</text>
+</svg>

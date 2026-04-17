@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Photographies{% endblock %}
+
+{% block page_content %}
+<div class="page-card p-4 mb-4">
+  <div class="page-title">Photographies</div>
+  <p class="text-small">Un aperçu visuel des astres, avec des images que vous pouvez présenter comme résultats de projet.</p>
+</div>
+
+<div class="row">
+  {% if photos %}
+    {% for photo in photos %}
+      <div class="col-md-4 mb-4">
+        <div class="card photo-card">
+          <img src="{{ photo.image_path | static_image }}" class="card-img-top" alt="{{ photo.title }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ photo.title }}</h5>
+            <p class="card-text">{{ photo.description }}</p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <div class="col-12">
+      <div class="card p-4 text-muted">Aucune photographie ajoutée pour le moment.</div>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}
